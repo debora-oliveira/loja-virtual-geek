@@ -1,11 +1,12 @@
 package loja.virtual.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Compra {
+	private int id;
 	private double totalDaCompra;
-	private Date data;
-	private Date horario;
+	private LocalDate dataCompra;
+	private LocalDate horario;
 	
 	public double getTotalDaCompra() {
 		return totalDaCompra;
@@ -14,18 +15,23 @@ public class Compra {
 		this.totalDaCompra = totalDaCompra;
 	}
 	
-	public Date getData() {
-		return data;
+	public int getId() {
+		return id;
 	}
-	public void setData(Date data) {
-		this.data = data;
+	public void setId(int id) {
+		this.id = id;
 	}
-	
-	public Date getHorario() {
+	public LocalDate getDataCompra() {
+		return dataCompra;
+	}
+	public void setDataCompra(LocalDate dataCompra) {
+		this.dataCompra = dataCompra;
+	}
+	public LocalDate getHorario() {
 		return horario;
 	}
-	public void setHorario(Date horario) {
+	public void setHorario(LocalDate horario) {
 		this.horario = horario;
 	}
-	
+		
 }

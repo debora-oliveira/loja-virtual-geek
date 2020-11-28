@@ -1,14 +1,25 @@
 package loja.virtual.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Cliente {
+	private int id;
 	private String nome;
 	private String cpf;
 	private String telefone;
-	private List<Endereco> endereco = new ArrayList<>();	
+	private Endereco endereco;
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+		
 	public String getNome() {
 		return nome;
 	}

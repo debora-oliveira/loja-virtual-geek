@@ -1,10 +1,11 @@
 package loja.virtual.entity;
 
 public class Produto {
+	private int id;
 	private String nome;
 	private String marca;
-	private String categoria;
-	private double valor;
+	private int quantidade;
+	private double preco;
 	
 	public String getNome() {
 		return nome;
@@ -19,18 +20,23 @@ public class Produto {
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getQuantidade() {
+		return quantidade;
+	}
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+	public double getPreco() {
+		return preco;
+	}
+	public void setPreco(double preco) {
+		this.preco = preco;
+	}
 	
-	public String getCategoria() {
-		return categoria;
-	}
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
-	}
-	
-	public double getValor() {
-		return valor;
-	}
-	public void setValor(double valor) {
-		this.valor = valor;
-	}
 }

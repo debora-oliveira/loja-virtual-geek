@@ -1,18 +1,20 @@
 package loja.virtual.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 public class Pagamento {
-	private Date dataPagamento;
-	private double totalComDesconto;
-	private String status;
-	
-	public Date getDataPagamento() {
+	private int id;
+	private LocalDate dataPagamento;
+	public LocalDate getDataPagamento() {
 		return dataPagamento;
 	}
-	public void setDataPagamento(Date dataPagamento) {
+	public void setDataPagamento(LocalDate dataPagamento) {
 		this.dataPagamento = dataPagamento;
 	}
+	private double totalComDesconto;
+	private String statusPagamento;
+	
 	
 	public double getTotalComDesconto() {
 		return totalComDesconto;
@@ -20,11 +22,17 @@ public class Pagamento {
 	public void setTotalComDesconto(double totalComDesconto) {
 		this.totalComDesconto = totalComDesconto;
 	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getStatusPagamento() {
+		return statusPagamento;
+	}
+	public void setStatusPagamento(String statusPagamento) {
+		this.statusPagamento = statusPagamento;
+	}
 	
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
 }

@@ -1,6 +1,13 @@
 package loja.virtual.entity;
 
 public class Endereco {
+	private int id;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	private String logradouro;
 	private String numero;
 	private String cep;

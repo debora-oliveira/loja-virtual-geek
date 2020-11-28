@@ -1,10 +1,10 @@
 package loja.virtual.entity;
 
 public class Administrador {
+	private int id;
 	private String nome;
 	private String cpf;
-	private String telefone;
-	
+		
 	public String getNome() {
 		return nome;
 	}
@@ -18,11 +18,11 @@ public class Administrador {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	
-	public String getTelefone() {
-		return telefone;
-	}
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
 }
