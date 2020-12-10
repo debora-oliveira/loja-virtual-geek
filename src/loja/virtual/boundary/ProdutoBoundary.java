@@ -8,11 +8,16 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class ProdutoBoundary extends Application implements EventHandler<ActionEvent>{
+public class ProdutoBoundary implements TelaStrategy,ProdutorComando{
 
+	private Pane pane = new FlowPane();
+	private AssinanteComando assinanteComando;
+	
 	private TextField txtId = new TextField();
 	private TextField txtNome = new TextField();
 	private TextField txtMarca = new TextField();
@@ -29,11 +34,11 @@ public class ProdutoBoundary extends Application implements EventHandler<ActionE
 	}
 	
 	
-	@Override
-	public void start(Stage stage) throws Exception {
+	
+	public ProdutoBoundary (){
 		vincularCampos();
-		BorderPane bp = new BorderPane();
-		Scene scn = new Scene(bp,700,300);
+		
+		//Scene scn = new Scene(pane,700,300);
 		GridPane paneCampos = new GridPane();
 		
 		paneCampos.add(new Label("Id"),0,0);
@@ -46,29 +51,39 @@ public class ProdutoBoundary extends Application implements EventHandler<ActionE
 		paneCampos.add(txtQuantidade,1,3);
 		paneCampos.add(new Label("Preço"),0,4);
 		paneCampos.add(txtPreco,1,4);
-		
-		btnAdd.setOnAction(this);
-		btnPesq.setOnAction(this);
-		btnEditESalvar.setOnAction(this);
-		btnRemove.setOnAction(this);
-		
-		bp.setTop(paneCampos);
+
+//		btnAdd.setOnAction(this);
+//		btnPesq.setOnAction(this);
+//		btnEditESalvar.setOnAction(this);
+//		btnRemove.setOnAction(this);
+		Button btn = new Button("Gerenciar Produtos");
+		pane.getChildren().addAll(paneCampos);
+		btn.setOnAction((e) -> {acionarComando("Gerenciar Produtos");});
+		//pane.setTop(paneCampos);
 		//bp.setCenter(table);
 		
-		stage.setScene(scn);
-		stage.setTitle("Gerenciar Produtos");
-		stage.show();
+		//stage.setScene(scn);
+		//stage.setTitle("Gerenciar Produtos");
+		//stage.show();
 		
-	}
-	
-	public static void main(String[] args) {
-		Application.launch(ProdutoBoundary.class, args);
 	}
 
 
 	@Override
-	public void handle(ActionEvent e) {
-		
+	public void setAssinanteComando(AssinanteComando a) {
+		this.assinanteComando = a;
+	}
+
+
+	@Override
+	public void acionarComando(String cmd) {
+		this.assinanteComando.executarComando(cmd);
+	}
+
+
+	@Override
+	public Pane getTela() {
+		return pane;
 	}
 
 }

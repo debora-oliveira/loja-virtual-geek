@@ -40,7 +40,7 @@ public class ProdutoControl {
 			precoProperty.set(p.getPreco());
 		}
 	}
-	//classe incompleta
+	
 	public void adicionar() {
 		getLista().add(getProduto());
 		
